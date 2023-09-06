@@ -1,0 +1,139 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@{
+}
+
+<div class="accordion accordion-flush" id="JobsAccordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#NewJob" aria-expanded="false" aria-controls="NewJob">
+                Create New Job Here
+            </button>
+        </h2>
+        <div id="NewJob" class="accordion-collapse collapse" data-bs-parent="#JobsAccordion">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-info text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#CurrentJobs" aria-expanded="false" aria-controls="CurrentJobs">
+                Current Jobs
+            </button>
+        </h2>
+        <div id="CurrentJobs" class="accordion-collapse collapse" data-bs-parent="#JobsAccordion">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#PreviousJobs" aria-expanded="false" aria-controls="PreviousJobs">
+                Previous Jobs
+            </button>
+        </h2>
+        <div id="PreviousJobs" class="accordion-collapse collapse" data-bs-parent="#JobsAccordion">
+            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+        </div>
+    </div>
+</div>
+
+<hr />
+
+<div class="accordion accordion-flush" id="itemAccordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#NewItemAccordion" aria-expanded="false" aria-controls="NewItemAccordion">
+                Add New Item To Inventory
+            </button>
+        </h2>
+        <div id="NewItemAccordion" class="accordion-collapse collapse" data-bs-parent="#itemAccordion">
+            <div class="container mt-5">
+                <div class="row justify-content-center">
+                    <div class="col-md-6">
+                        <form id="NewItemForm">
+                            <div class="form-group">
+                                <label for="name">Name:</label>
+                                <input type="text" class="form-control" id="name" placeholder="Enter your name">
+                            </div>
+                            <div class="form-group">
+                                <label for="quantity">Quantity:</label>
+                                <input type="number" class="form-control" id="quantity">
+                            </div>
+                            <div class="form-group">
+                                <label for="image">Image:</label>
+                                <input type="file" class="form-control" id="image">
+                            </div>
+                            <div class="form-group">
+                                <label for="price">Price:</label>
+                                <input type="number" class="form-control" id="price">
+                            </div>
+                            <div class="form-group">
+                                <label for="supplier">Supplier:</label>
+                                <input type="text" class="form-control" id="supplier">
+                            </div>
+                            <div class="form-group">
+                                <label for="itemNo">Item No:</label>
+                                <input type="text" class="form-control" id="itemNo">
+                            </div>
+                            <button type="button" class="btn btn-primary mt-3" onclick="validatePrice">Add Item To Inventory</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-info text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#ItemTableAccordion" aria-expanded="false" aria-controls="ItemTableAccordion">
+                Current Inventory
+            </button>
+        </h2>
+        <div id="ItemTableAccordion" class="accordion-collapse collapse" data-bs-parent="#itemAccordion">
+
+
+            <div class="container">
+                <h2>Inventory</h2>
+                <p>List of Items in inventory</p>
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Quantity</th>
+                            <th>Name</th>
+                            <th>Price</th>
+                            <th>Image</th>
+                            <th>Supplier</th>
+                            <th>Item Number</th>
+                            <th>Notes</th>
+                            <th>Order Quantity</th>
+                            <th>Re-order</th>
+                            <th>Often Used</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td><input type="number" class="form-control" name="quantity" value="100" /></td>
+                            <td>3/4 inch screw</td>
+                            <td><input type="number" class="form-control" name="quantity" value="32.99" /></td>
+                            <td><img src="https://placehold.co/200x150?text=Hello+World" class="img-fluid" /></td>
+                            <td>Auto Zone</td>
+                            <td>#1359</td>
+                            <td class="scrollable-content">We use this a lot</td>
+                            <td><input type="text" class="form-control" name="orderQuantity" value="100 count" /></td>
+                            <td><button type="button" class="btn btn-primary">Click to Reorder</button></td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success">Always</button>
+                                    <button type="button" class="btn btn-warning">Sometimes</button>
+                                    <button type="button" class="btn btn-danger">Rarely</button>
+                                    <button type="button" class="btn btn-secondary">Never</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+
+

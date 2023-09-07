@@ -2,7 +2,40 @@
 // for details on configuring this project to bundle and minify static web assets.
 
 // Write your JavaScript code.
-validatePrice = function ()
+
+// Here we allow our create job form to add more select options (employees and items) to the form as they need
+const selectedEmployees = [];
+
+document.getElementById('employee-form').addEventListener('submit', function (e) {
+    e.preventDefault();
+
+    // Get the selected employees and do something with them
+    console.log('Selected Employees:', selectedEmployees);
+
+    // You can now send the selected employees to the server or process them as needed.
+});
+
+
+function addEmployee() {
+    const employeeSelect = document.getElementById('employee-select');
+    const selectedEmployeeValue = employeeSelect.value;
+    const selectedEmployeeText = employeeSelect.options[employeeSelect.selectedIndex].text;
+
+    // Check if the employee is already selected
+    if (!selectedEmployees.includes(selectedEmployeeValue)) {
+        selectedEmployees.push(selectedEmployeeValue);
+
+        // Display the selected employee
+        const selectedEmployeesDiv = document.getElementById('selected-employees');
+        const selectedEmployeeParagraph = document.createElement('p');
+        selectedEmployeeParagraph.textContent = selectedEmployeeText;
+        selectedEmployeesDiv.appendChild(selectedEmployeeParagraph);
+    }
+}
+
+
+// Here we validate dollar amounts
+validateDollar = function ()
 {
     let price = $(#price).val();
     let regex = /^[1-9]\d*(((,\d{3}){1})?(\.\d{0,2})?)$/;

@@ -4,35 +4,149 @@
 @{
 }
 
+<div class="accordion accordion-flush" id="EmployeeAccordion">
+    <div class="accordion-item">
+        <h2 class="accordion-header">
+            <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#NewEmployee" aria-expanded="false" aria-controls="NewEmployee">
+                Create Employee
+            </button>
+        </h2>
+        <div id="NewEmployee" class="accordion-collapse collapse" data-bs-parent="#EmployeeAccordion">
+            <h1>New Employee</h1>
+            <form id="employee-form">
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" class="form-control" id="email">
+                </div>
+                <div class="form-group">
+                    <label for="position">Position:</label>
+                    <input type="text" class="form-control" id="position">
+                </div>
+                <div class="form-group">
+                    <label for="wage">Wage:</label>
+                    <input type="number" class="form-control" id="wage">
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="true" id="cdl">
+                    <label class="form-check-label" for="cdl">
+                        CDL
+                    </label>
+                </div>
+                <div class="form-check">
+                    <input class="form-check-input" type="checkbox" value="true" id="carpentry">
+                    <label class="form-check-label" for="carpentry">
+                        Carpentry
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-success mt-3">Submit</button>
+            </form>
+        </div>
+    </div>
+</div>
+
 <div class="accordion accordion-flush" id="JobsAccordion">
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed bg-success text-light" type="button" data-bs-toggle="collapse" data-bs-target="#NewJob" aria-expanded="false" aria-controls="NewJob">
-                Create New Job Here
+                Create New Job
             </button>
         </h2>
         <div id="NewJob" class="accordion-collapse collapse" data-bs-parent="#JobsAccordion">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the first item's accordion body.</div>
+            <div class="container mt-5">
+                <h1>New Job</h1>
+                <form id="job-form">
+                    <div class="form-group">
+                        <label for="name">Name:</label>
+                        <input type="text" class="form-control" id="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">Address:</label>
+                        <input type="text" class="form-control" id="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="description">Description:</label>
+                        <input type="text" class="form-control" id="description">
+                    </div>
+                    <div class="form-group">
+                        <label for="status">Status:</label>
+                        <select>
+                            <option value="Not Paid or Started">Quoted, Not Started and Not Paid</option>
+                            <option value="Started">Started</option>
+                            <option value="Completed">Completed</option>
+                            <option value="Delays">Delayed due to: items | labor | client</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="notes">Notes:</label>
+                        <input type="text" class="form-control" id="notes">
+                    </div>
+                    <div class="form-group">
+                        <label for="estimatedJobTime">Estimated Job Time:</label>
+                        <input type="text" class="form-control" id="estimatedJobTime">
+                    </div>
+                    <div class="form-group">
+                        <label for="quotedAmount">Quoted Amount:</label>
+                        <input type="number" class="form-control" id="quotedAmount">
+                    </div>
+                    <button type="submit" class="btn btn-success mt-3">Submit</button>
+                </form>
+            </div>
         </div>
     </div>
     <div class="accordion-item">
         <h2 class="accordion-header">
             <button class="accordion-button collapsed bg-info text-dark" type="button" data-bs-toggle="collapse" data-bs-target="#CurrentJobs" aria-expanded="false" aria-controls="CurrentJobs">
-                Current Jobs
+                Jobs
             </button>
         </h2>
         <div id="CurrentJobs" class="accordion-collapse collapse" data-bs-parent="#JobsAccordion">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
-        </div>
-    </div>
-    <div class="accordion-item">
-        <h2 class="accordion-header">
-            <button class="accordion-button collapsed bg-warning" type="button" data-bs-toggle="collapse" data-bs-target="#PreviousJobs" aria-expanded="false" aria-controls="PreviousJobs">
-                Previous Jobs
-            </button>
-        </h2>
-        <div id="PreviousJobs" class="accordion-collapse collapse" data-bs-parent="#JobsAccordion">
-            <div class="accordion-body">Placeholder content for this accordion, which is intended to demonstrate the <code>.accordion-flush</code> class. This is the second item's accordion body. Let's imagine this being filled with some actual content.</div>
+            <div class="container">
+                <h2>Jobs</h2>
+                <p>List of non-worked jobs</p>
+                <table class="table table-bordered table-striped">
+                    <thead class="thead-dark">
+                        <tr>
+                            <th>Name</th>
+                            <th>Description</th>
+                            <th>Address</th>
+                            <th>Status</th>
+                            <th>StartDate</th>
+                            <th>Estimated Job Time</th>
+                            <th>Quoted</th>
+                            <th>Total Cost</th>
+                            <th>Profit</th>
+                            <th>Update Status</th>
+                            <th>View Details</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>4th Street Diner</td>
+                            <td>New roof, tin, shingles, tarp, etc</td>
+                            <td>33rd 4th st, main city, stateOne, 23525</td>
+                            <td>Delays</td>
+                            <td>Start Date</td>
+                            <td>16 weeks</td>
+                            <td>3299.99</td>
+                            <td>1799</td>
+                            <td>9999.22</td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success">Completed</button>
+                                    <button type="button" class="btn btn-warning">Delays</button>
+                                    <button type="button" class="btn btn-danger">Not Paid or Started</button>
+                                    <button type="button" class="btn btn-secondary">Started</button>
+                                </div>
+                            </td>
+                            <td>
+                                <div class="btn-group">
+                                    <button type="button" class="btn btn-success">Update Details</button>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
         </div>
     </div>
 </div>
@@ -75,7 +189,7 @@
                                 <label for="itemNo">Item No:</label>
                                 <input type="text" class="form-control" id="itemNo">
                             </div>
-                            <button type="button" class="btn btn-primary mt-3" onclick="validatePrice">Add Item To Inventory</button>
+                            <button type="button" class="btn btn-primary mt-3" onclick="validateDollar">Add Item To Inventory</button>
                         </form>
                     </div>
                 </div>

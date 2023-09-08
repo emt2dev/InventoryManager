@@ -8,5 +8,11 @@ namespace InventoryManager.Models
         public string Position { get; set; }
         public double Wage { get; set; }
         public IList<string>? Skills { get; set; }
+
+        public EmployeeModel(string Email, double hourly)
+        {
+            this.Email = Email;
+            this.Wage = hourly;
+        }
     }
 }
